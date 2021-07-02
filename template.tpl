@@ -42,6 +42,12 @@ ___TEMPLATE_PARAMETERS___
     "defaultValue": "fbclid",
     "help": "parameter key to extract from a request parameter value or event data",
     "valueHint": "e.g. \"fbclid\" or \"gclid\""
+  },
+  {
+    "type": "CHECKBOX",
+    "name": "useUndefined",
+    "checkboxText": "return \"undefined\" instead of empty string if not found",
+    "simpleValueType": true
   }
 ]
 
@@ -51,7 +57,8 @@ ___SANDBOXED_JS_FOR_SERVER___
 const parseUrl = require('parseUrl');
 var urlInfo = parseUrl(data.fieldToParse);
 var params = (urlInfo) ? urlInfo.searchParams : [];
-return params[data.paramName] || "";
+var fallback = (data.useUndefined) ? undefined : "";
+return params[data.paramName] || fallback;
 
 
 ___TESTS___
