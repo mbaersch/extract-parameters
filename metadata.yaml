@@ -1,8 +1,8 @@
 homepage: "https://www.markus-baersch.de"
 versions:
- # Latest version
- - sha: 350e28e4c37ea62942a420b99c9bab8686a62be2
+  # Latest version
+  - sha: 350e28e4c37ea62942a420b99c9bab8686a62be2
     changeNotes: optionally returns undefined instead of empty string if Event Data element is not present.
- # Older versions
- - sha: ff8b5a81576a9fb7d270df03d7f2a13f21309921
+  # Older versions
+  - sha: ff8b5a81576a9fb7d270df03d7f2a13f21309921
     changeNotes: Initial release.
